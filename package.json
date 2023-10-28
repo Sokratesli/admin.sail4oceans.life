@@ -1,6 +1,6 @@
 {
-  "name": "nextcase",
-  "description": "case management web application by web|stek",
+  "name": "admin.sail4oceans.life",
+  "description": "Administration interface for sail4oceans.life",
   "private": true,
   "type": "module",
   "version": "0.0.1",
