@@ -1,0 +1,20 @@
+/* src/styles.css */
+@import '../style/fonts/inter.css';
+
+
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+.sr-only {
+    display: none;
+  }
+  
+  @layer base {
+    body {
+        font-family: 'Inter', 'sans-serif';
+    }
+    p {
+        font-family: 'Inter', 'sans-serif';
+    }
+  }
