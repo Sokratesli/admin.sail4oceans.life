@@ -41,7 +41,7 @@ console.log(response);
         <div className="ml-4 mt-4 flex-shrink-0">
           <button
             type="button"
-            className="relative inline-flex items-center rounded-md bg-nextcase-300 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:text-white hover:bg-nextcase-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-nextcase-300"
+            className="relative inline-flex items-center rounded-md bg-ocean-300 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:text-white hover:bg-ocean-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ocean-300"
           >
             Edit client
           </button>

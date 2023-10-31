@@ -224,7 +224,7 @@ client.subscribe('notifications', response => {
             </ul>
             {displayedNotifications?.length >= 6 && (
               <Link
-                className="text-xs font-semibold text-slate-400 hover:text-nextcase-500 pt-1.5 pb-2 px-4"
+                className="text-xs font-semibold text-slate-400 hover:text-ocean-500 pt-1.5 pb-2 px-4"
                 to="/notifications"
                 onClick={() => setDropdownOpen(false)}
               >
@@ -235,7 +235,7 @@ client.subscribe('notifications', response => {
             displayedNotifications.length !== 0 &&
             displayedNotifications.length <= 5 ? (
               <button
-                className="text-xs font-semibold text-slate-400 hover:text-nextcase-500 pt-1.5 pb-2 px-4"
+                className="text-xs font-semibold text-slate-400 hover:text-ocean-500 pt-1.5 pb-2 px-4"
                 onClick={handleShowMore}
               >
                 {t("showMore")}

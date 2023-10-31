@@ -204,7 +204,7 @@ const addresses = [
                       </td>
                       <td className="whitespace-nowrap px-3 py-5 text-sm text-gray-500">{address.role}</td>
                       <td className="relative whitespace-nowrap py-5 pl-3 pr-4 text-right text-sm font-medium sm:pr-0">
-                        <a href="#" className="text-nextcase-300 hover:text-nextcase-400">
+                        <a href="#" className="text-ocean-300 hover:text-ocean-400">
                           Edit<span className="sr-only">, {address.name}</span>
                         </a>
                       </td>

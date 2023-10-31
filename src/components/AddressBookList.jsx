@@ -253,7 +253,7 @@ export default function AddressBookList({ maxItems }) {
         <div className="mt-4 sm:ml-16 sm:mt-0 sm:flex-none">
           <button
             type="button"
-            className="block rounded-md bg-nextcase-300 px-3 py-2 text-center text-sm font-semibold text-white shadow-sm hover:bg-nextcase-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-nextcase-300"
+            className="block rounded-md bg-ocean-300 px-3 py-2 text-center text-sm font-semibold text-white shadow-sm hover:bg-ocean-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ocean-300"
           >
             Add user
           </button>
@@ -285,7 +285,7 @@ export default function AddressBookList({ maxItems }) {
                     <th scope="col" className="relative px-7 sm:w-12 sm:px-6">
                       <input
                         type="checkbox"
-                        className="absolute left-4 top-1/2 -mt-2 h-4 w-4 rounded border-gray-300 text-nextcase-300 focus:ring-nextcase-300"
+                        className="absolute left-4 top-1/2 -mt-2 h-4 w-4 rounded border-gray-300 text-ocean-300 focus:ring-ocean-300"
                         ref={checkbox}
                         checked={checked}
                         onChange={toggleAll}
@@ -337,11 +337,11 @@ export default function AddressBookList({ maxItems }) {
                       >
                         <td className="relative px-7 sm:w-12 sm:px-6">
                           {selectedAddress.includes(address) && (
-                            <div className="absolute inset-y-0 left-0 w-0.5 bg-nextcase-300" />
+                            <div className="absolute inset-y-0 left-0 w-0.5 bg-ocean-300" />
                           )}
                           <input
                             type="checkbox"
-                            className="absolute left-4 top-1/2 -mt-2 h-4 w-4 rounded border-gray-300 text-nextcase-300 focus:ring-nextcase-300"
+                            className="absolute left-4 top-1/2 -mt-2 h-4 w-4 rounded border-gray-300 text-ocean-300 focus:ring-ocean-300"
                             value={address.email}
                             checked={selectedAddress.includes(address)}
                             onChange={(e) =>
@@ -357,7 +357,7 @@ export default function AddressBookList({ maxItems }) {
                           className={classNames(
                             "whitespace-nowrap py-4 pr-3 text-sm  font-bold",
                             selectedAddress.includes(address)
-                              ? "text-nextcase-300"
+                              ? "text-ocean-300"
                               : "text-gray-900"
                           )}
                         >
@@ -373,7 +373,7 @@ export default function AddressBookList({ maxItems }) {
                           {address.role}
                         </td>
                         <td className="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-6">
-                          <a href="#" className="text-nextcase-300">
+                          <a href="#" className="text-ocean-300">
                             Edit
                             <span className="sr-only">, {address.name}</span>
                           </a>

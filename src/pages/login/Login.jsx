@@ -67,7 +67,7 @@ export default function Login() {
                   type="text"
                   placeholder={t("name")}
                   //required
-                  className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-nextcase-400 sm:text-sm sm:leading-6"
+                  className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-ocean-400 sm:text-sm sm:leading-6"
                 />
               </div>
             </div>
@@ -89,7 +89,7 @@ export default function Login() {
                   autoComplete="email"
                   required
                   placeholder={"email"}
-                  className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-nextcase-400 sm:text-sm sm:leading-6"
+                  className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-ocean-400 sm:text-sm sm:leading-6"
                 />
               </div>
             </div>
@@ -105,7 +105,7 @@ export default function Login() {
                 <div className="text-sm">
                   <a
                     href="#"
-                    className="font-semibold text-nextcase-400 hover:text-nextcase-400"
+                    className="font-semibold text-ocean-400 hover:text-ocean-400"
                   >
                     {t("forgotPassword")}
                   </a>
@@ -121,7 +121,7 @@ export default function Login() {
                   autoComplete="current-password"
                   required
                   placeholder={t("password")}
-                  className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-nextcase-400 sm:text-sm sm:leading-6"
+                  className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-ocean-400 sm:text-sm sm:leading-6"
                 />
               </div>
             </div>
@@ -130,7 +130,7 @@ export default function Login() {
               <button
                 type="button"
                 onClick={() => login(email, password)}
-                className="flex w-full justify-center rounded-md bg-nextcase-400 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-nextcase-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-nextcase-400"
+                className="flex w-full justify-center rounded-md bg-ocean-400 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-ocean-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ocean-400"
               >
                 {t("login")}
               </button>

@@ -129,7 +129,7 @@ function AnalyticsCard02() {
 
         {/* Card footer */}
         <div className="text-right px-5 pb-4">
-          <Link className="text-sm font-medium text-nextcase-500 hover:text-nextcase-600" to="#0">Real-Time Report -&gt;</Link>
+          <Link className="text-sm font-medium text-ocean-500 hover:text-ocean-600" to="#0">Real-Time Report -&gt;</Link>
         </div>
       </div>
     </div>

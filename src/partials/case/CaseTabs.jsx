@@ -41,7 +41,7 @@ export default function CaseTabs({ caseTab, setCaseTab }) {
           </span>
           <Menu as="div" className="relative ml-3 inline-block text-left">
             <div>
-              <Menu.Button className="-my-2 flex items-center rounded-full bg-white p-2 text-gray-400 hover:text-gray-600 focus:outline-none focus:ring-2 focus:ring-nextcase-300">
+              <Menu.Button className="-my-2 flex items-center rounded-full bg-white p-2 text-gray-400 hover:text-gray-600 focus:outline-none focus:ring-2 focus:ring-ocean-300">
                 <span className="sr-only">Open options</span>
                 <EllipsisVerticalIcon className="h-5 w-5" aria-hidden="true" />
               </Menu.Button>
@@ -130,7 +130,7 @@ export default function CaseTabs({ caseTab, setCaseTab }) {
                 key={tab.name}
                 className={classNames(
                   tab.current
-                    ? "border-nextcase-300 text-nextcase-300"
+                    ? "border-ocean-300 text-ocean-300"
                     : "border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700",
                   "whitespace-nowrap border-b-2 px-1 pb-4 text-sm font-medium"
                 )}
