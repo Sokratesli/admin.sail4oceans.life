@@ -1,27 +1,31 @@
 import React, { useEffect, useState, useContext } from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
-//import AuthWrapper from "./AuthWrapper";
+
+import { LoadingContext } from "./components/lib/context/LoadingProvider";
+import { LoadingBar } from "./components/ui/LoadingBar";
+import AuthWrapper from "./AuthWrapper";
 
 import Dashboard from "../src/pages/dashboard/Dashboard";
 import Settings from "../src/pages/settings/Settings";
 
-import Cases from "../src/pages/cases/Case";
-import Mandates from "../src/pages/mandates/Mandates";
-import AddressBook from "../src/pages/addressbook/AddressBook";
-import Calendar from "../src/pages/calendar/Calendar";
-import Documents from "../src/pages/documents/Documents";
-import Records from "../src/pages/records/Records";
-
-import Invoices from "../src/pages/invoices/Invoices";
+import System from "../src/pages/system/System";
 import Analytics from "../src/pages/analytics/Analytics";
 
-import Admin from "../src/pages/admin/Admin";
+import Posts from "../src/pages/posts/Posts";
+import Users from "../src/pages/users/Users";
+import TheRoutes from "../src/pages/routes/Routes";
+import Yachts from "../src/pages/yachts/Yachts";
+import Media from "../src/pages/media/Media";
+import Groups from "../src/pages/groups/Groups";
+import Donations from "../src/pages/donations/Donations";
+
 
 import PageNotFound from "../src/components/ui/404";
 import Login from "./pages/login/Login";
 
 
 function App() {
+  const { loading } = useContext(LoadingContext);
   const location = useLocation();
 
   useEffect(() => {
@@ -45,6 +49,8 @@ function App() {
 
   return (
     <>
+          {loading && <LoadingBar />}
+
       <Routes>
         {/*}
       <Route
@@ -53,20 +59,20 @@ function App() {
   /> */}
         <Route path="/login" element={<Login />} />
         {/* Protected */}
-        <Route path="/" element={<Dashboard />} />
-        <Route path="/settings" element={<Settings />} />
+        <Route path="/" element={<AuthWrapper component={Dashboard} auth={true} />}  />
+        <Route path="/settings" element={<AuthWrapper component={Settings} auth={true} />} />
 
-        <Route path="/cases" element={<Cases />} />
-        <Route path="/mandates" element={<Mandates />} />
-        <Route path="/addressbook" element={<AddressBook />} />
-        <Route path="/calendar" element={<Calendar />} />
-        <Route path="/documents" element={<Documents />} />
-        <Route path="/records" element={<Records />} />
-        <Route path="/invoices" element={<Invoices />} />
-        <Route path="/analytics" element={<Analytics />} />
+        <Route path="/posts" element={<AuthWrapper component={Posts} auth={true} />} />
+        <Route path="/yachts" element={<AuthWrapper component={Yachts} auth={true} />} />
+        <Route path="/routes" element={<AuthWrapper component={TheRoutes} auth={true} />} />
+        <Route path="/media" element={<AuthWrapper component={Media} auth={true} />} />
+        <Route path="/groups" element={<AuthWrapper component={Groups} auth={true} />} />
+        <Route path="/donations" element={<AuthWrapper component={Donations} auth={true} />} />
+        <Route path="/users" element={<AuthWrapper component={Users} auth={true} />} />
 
-        {/* Admin */}
-        <Route path="/admin" element={<Admin />} />
+        {/* System */}
+        <Route path="/system" element={<AuthWrapper component={System} auth={true} />} />
+        <Route path="/analytics" element={<AuthWrapper component={Analytics} auth={true} />} />
 
         {/* Page Not Found */}
         <Route path="*" element={<PageNotFound />} />

@@ -29,34 +29,9 @@ export default function DropdownNotifications({ align }) {
 
   
 
-  // DB
-  const client = new Client()
-  .setEndpoint(import.meta.env.VITE_APPWRITE_SERVER_PATH) //APPWRITE API URL
-  .setProject(import.meta.env.VITE_APPWRITE_PROJECT_ID); //Project ID
-
-const databases = new Databases(client);
-
-
 useEffect(() => {
-  // Make a GET request using Axios
-  axios.get(`${import.meta.env.VITE_APPWRITE_SERVER_PATH}/databases/${import.meta.env.VITE_APPWRITE_DB_ID}/collections/${import.meta.env.VITE_APPWRITE_COLL_NOTIFICATIONS}/documents`, {
-    headers: {
-      'X-Appwrite-Project': import.meta.env.VITE_APPWRITE_PROJECT_ID,
-      'X-Appwrite-Key': import.meta.env.VITE_APPWRITE_API,
-    },
-  })
-    .then(response => {
-      setNotificationData(response.data.documents);
-    })
-    .catch(error => {
-      console.error('Error fetching data:', error);
-    });
-}, []);
 
-client.subscribe('notifications', response => {
-  // Callback will be executed on all account events.
-  console.log(response);
-});
+}, []);
 
   // close on click outside
   useEffect(() => {

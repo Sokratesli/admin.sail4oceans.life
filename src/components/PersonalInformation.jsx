@@ -2,7 +2,7 @@ import { PaperClipIcon } from "@heroicons/react/20/solid";
 import { useTranslation, Trans } from "react-i18next";
 import React from "react";
 
-import { databases, ID } from "../components/lib/appwrite"
+import { databases, ID } from "../components/lib/Appwrite"
 import { Client, Account, Databases, Query } from "appwrite";
 
 

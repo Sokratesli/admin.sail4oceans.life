@@ -8,7 +8,7 @@ import Footer from "../../components/ui/Footer";
 import AddressBookList from "../../components/AddressBookList";
 
 
-export default function Documents() {
+export default function Donations() {
   const { t } = useTranslation();
   const [sidebarOpen, setSidebarOpen] = useState(false);
 

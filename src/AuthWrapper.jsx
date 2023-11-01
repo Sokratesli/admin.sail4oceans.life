@@ -1,11 +1,10 @@
 import { useTranslation, Trans } from "react-i18next";
-import React, { useEffect, useState, useCallback, useContext } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 
-import PageNotFound from "./pages/utility/PageNotFound";
-import { LoadingBar } from "./components/LoadingBar";
+import { LoadingBar } from "./components/ui/LoadingBar";
 import { LoadingContext } from "./components/lib/context/LoadingProvider";
-import { account, ID, databases } from "./components/lib/Appwrite";
+import { account, ID, databases, storage } from "./components/lib/Appwrite";
 
 const AuthWrapper = ({ component: Component, auth, ...props }) => {
   const { t } = useTranslation();
@@ -15,16 +14,18 @@ const AuthWrapper = ({ component: Component, auth, ...props }) => {
   const [userPublicId, setUserPublicId] = useState(null);
   const [followTeamId, setFollowTeamId] = useState(null);
   const [userId, setUserId] = useState(null);
+  const [userPublicData, setUserPublicData] = useState(null);
+  const [userPrivateData, setUserPrivateData] = useState(null);
+  const [userPrivateAvatarUrl, setUserPrivateAvatarUrl] = useState(null);
+  const [userPublicAvatarUrl, setUserPublicAvatarUrl] = useState(null);
   const [userAuth, setUserAuth] = useState(false);
   const [settings, setSettings] = useState([]);
-  const [error, setError] = useState(null);
   const navigate = useNavigate();
 
   const fetchData = async () => {
     try {
       const response = await account.get();
       if (response) {
-        console.log(response)
         setUserId(response.$id);
 
         const [
@@ -45,22 +46,34 @@ const AuthWrapper = ({ component: Component, auth, ...props }) => {
             import.meta.env.VITE_APPWRITE_COLL_SETTINGS
           )
         ]);
-
+        const [
+          privateAvatarResponse,
+          publicAvatarResponse
+        ] = await Promise.all([
+          storage.getFilePreview(
+            import.meta.env.VITE_APPWRITE_BUCKET_USER_PRIVATE_AVATAR,
+            userPublicResponse?.documents[0]?.privateAvatarId
+          ),
+          storage.getFilePreview(
+            import.meta.env.VITE_APPWRITE_BUCKET_USER_PUBLIC_AVATAR,
+            userPublicResponse?.documents[0]?.publicAvatarId
+          )
+        ]);
         setUserPrivateId(userPrivateResponse?.documents[0]?.$id);
         setFollowTeamId(userPrivateResponse?.documents[0]?.followTeamId);
-
         setUserPublicId(userPublicResponse?.documents[0]?.$id);
-
+        setUserPublicData(userPublicResponse?.documents[0]);
+        setUserPrivateData(userPrivateResponse?.documents[0]);
+        setUserPrivateAvatarUrl(privateAvatarResponse.href);
+        setUserPublicAvatarUrl(publicAvatarResponse.href);
         setSettings(settingsResponse?.documents[0]);
-
         setUserAuth(true);
       }
       setLoading(false);
     } catch (error) {
-      // console.log(error); // Failure
-      navigate("/signin", { state: { logout: true } });
+      navigate("/login");
       setLoading(false);
-      setError(error);
+      console.log(error);
     }
   };
 
@@ -69,7 +82,7 @@ const AuthWrapper = ({ component: Component, auth, ...props }) => {
   }, []);
 
   if (loading) return <LoadingBar />;
-  if (!loading && userPublicId && userPrivateId && userId && userAuth === auth && settings) {
+  if (!loading && userPublicId && userPublicData && userPrivateData && userPrivateAvatarUrl && userPrivateId && userId && userAuth === auth && settings) {
     return (
       <Component
         {...props}
@@ -77,6 +90,9 @@ const AuthWrapper = ({ component: Component, auth, ...props }) => {
         followTeamId={followTeamId}
         userPublicId={userPublicId}
         userPrivateId={userPrivateId}
+        userPublicData={userPrivateData}
+        userPublicAvatarUrl={userPublicAvatarUrl}
+        userPrivateAvatarUrl={userPrivateAvatarUrl}
         settings={settings}
       />
     );

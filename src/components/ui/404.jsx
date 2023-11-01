@@ -1,26 +1,9 @@
 import { useState, useEffect } from "react";
 import { useTranslation, Trans } from "react-i18next";
 
-import Header from "../../components/ui/Header";
-import TopBar from "../../components/ui/TopBar";
-import Footer from "../../components/ui/Footer";
-
-import CaseTabs from "../../partials/case/CaseTabs";
-import CaseList from "../../partials/case/CaseList";
-
-import CaseOverview from "../../partials/case/CaseOverview";
-import CaseProfile from "../../partials/case/CaseProfile";
-import CaseAddressBook from "../../partials/case/CaseAddressBook";
-import CaseJournal from "../../partials/case/CaseJournal";
-import CaseCalendar from "../../partials/case/CaseCalendar";
-import CaseDocuments from "../../partials/case/CaseDocuments";
-import CaseRecords from "../../partials/case/CaseRecords";
-import CaseFinance from "../../partials/case/CaseFinance";
-
 
 export default function PageNotFound() {
   const { t } = useTranslation();
-  const [sidebarOpen, setSidebarOpen] = useState(false);
 
   const [caseId, setCaseId] = useState(null);
   const [caseTab, setCaseTab] = useState('overview');

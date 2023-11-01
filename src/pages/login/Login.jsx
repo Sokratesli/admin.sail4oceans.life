@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useTranslation, Trans } from "react-i18next";
 
-import { account, ID } from "../../components/lib/appwrite";
+import { account, ID } from "../../components/lib/Appwrite";
 import { useAlert } from "../../components/lib/context/AlertProvider";
 
 import Logo from "../../components/Logo";

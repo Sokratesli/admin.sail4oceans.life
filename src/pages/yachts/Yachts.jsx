@@ -5,12 +5,10 @@ import Header from "../../components/ui/Header";
 import TopBar from "../../components/ui/TopBar";
 import Footer from "../../components/ui/Footer";
 
-import AdminTabs from "../../partials/admin/AdminTabs";
+import CalendarMonthView from "../../components/calendar/CalendarMonthView";
 
-import CaseOverview from "../../partials/case/CaseOverview";
-import AdminUserList from "../../partials/admin/AdminUserList";
 
-export default function Admin() {
+export default function Yachts() {
   const { t } = useTranslation();
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
@@ -34,14 +32,7 @@ export default function Admin() {
           <TopBar />
           <main className="p-5">
             <div className="col-start-1 row-start-1 col-span-3">
-              <AdminTabs setCaseTab={setCaseTab} caseTab={caseTab} />
-              <div className="mt-5">
-                {caseTab === "overview" ? (
-                  <CaseOverview />
-                ) : caseTab === "user" ? (
-                  <AdminUserList />
-                ) : null}
-              </div>
+            <CalendarMonthView/>
             </div>
           </main>
         </div>

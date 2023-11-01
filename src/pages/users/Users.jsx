@@ -8,7 +8,7 @@ import Footer from "../../components/ui/Footer";
 import AddressBookList from "../../components/AddressBookList";
 
 
-export default function Invoices() {
+export default function Users() {
   const { t } = useTranslation();
   const [sidebarOpen, setSidebarOpen] = useState(false);
 

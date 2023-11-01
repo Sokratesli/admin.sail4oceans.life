@@ -16,11 +16,15 @@ export function Nav() {
   return (
     <>
       <div className="hidden lg:fixed lg:inset-y-0 lg:left-0 lg:z-50 lg:block lg:w-20 lg:overflow-y-auto lg:bg-ocean-600 lg:pb-4">
-      <div className="flex text-ocean-600 bg-white text-xs p-1 font-bold top-2 mt-2 w-full text-center justify-center ml-3 rounded-full">admin</div>
+        <div className="flex text-white text-xs p-1 font-bold top-2 mt-2 w-full text-center justify-center">
+          Admin
+        </div>
         <div className="flex h-16 shrink-0 items-center justify-center p-2">
-        <div className="relative">
-          <div className="-mt-2"><Logo color="white" /></div>
-  </div>
+          <div className="relative">
+            <div className="-mt-2">
+              <Logo color="white" />
+            </div>
+          </div>
         </div>
         <nav className="mt-8">
           <ul role="list" className="flex flex-col items-center space-y-1">
@@ -54,6 +58,9 @@ export function MobileNav() {
   return (
     <>
       <div className="flex grow flex-col gap-y-5 overflow-y-auto bg-ocean-600 px-6 pb-2 ring-1 ring-white/10">
+      <div className="flex text-white text-xs p-1 font-bold top-2 mt-2 w-full text-center justify-center">
+          Admin
+        </div>
         <div className="flex h-16 shrink-0 items-center p-2 pt-4">
           <Logo color="white" />
         </div>

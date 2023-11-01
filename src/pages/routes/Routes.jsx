@@ -5,10 +5,10 @@ import Header from "../../components/ui/Header";
 import TopBar from "../../components/ui/TopBar";
 import Footer from "../../components/ui/Footer";
 
-import CalendarMonthView from "../../components/calendar/CalendarMonthView";
+import AddressBookList from "../../components/AddressBookList";
 
 
-export default function Calendar() {
+export default function Routes() {
   const { t } = useTranslation();
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
@@ -32,7 +32,7 @@ export default function Calendar() {
           <TopBar />
           <main className="p-5">
             <div className="col-start-1 row-start-1 col-span-3">
-            <CalendarMonthView/>
+            <AddressBookList maxItems={15} />
             </div>
           </main>
         </div>

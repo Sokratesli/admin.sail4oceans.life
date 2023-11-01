@@ -5,20 +5,20 @@ import Header from "../../components/ui/Header";
 import TopBar from "../../components/ui/TopBar";
 import Footer from "../../components/ui/Footer";
 
-import CaseTabs from "../../partials/case/CaseTabs";
-import CaseList from "../../partials/case/CaseList";
+import CaseTabs from "../../partials/groups/GroupsTabs";
+import CaseList from "../../partials/groups/GroupsList";
 
-import CaseOverview from "../../partials/case/CaseOverview";
-import CaseProfile from "../../partials/case/CaseProfile";
-import CaseAddressBook from "../../partials/case/CaseAddressBook";
-import CaseJournal from "../../partials/case/CaseJournal";
-import CaseCalendar from "../../partials/case/CaseCalendar";
-import CaseDocuments from "../../partials/case/CaseDocuments";
-import CaseRecords from "../../partials/case/CaseRecords";
-import CaseFinance from "../../partials/case/CaseFinance";
+import CaseOverview from "../../partials/groups/GroupsOverview";
+import CaseProfile from "../../partials/groups/GroupsProfile";
+import CaseAddressBook from "../../partials/groups/GroupsAddressBook";
+import CaseJournal from "../../partials/groups/GroupsJournal";
+import CaseCalendar from "../../partials/groups/GroupsCalendar";
+import CaseDocuments from "../../partials/groups/GroupsDocuments";
+import CaseRecords from "../../partials/groups/GroupsRecords";
+import CaseFinance from "../../partials/groups/GroupsFinance";
 
 
-export default function Cases() {
+export default function Groups() {
   const { t } = useTranslation();
   const [sidebarOpen, setSidebarOpen] = useState(false);
 

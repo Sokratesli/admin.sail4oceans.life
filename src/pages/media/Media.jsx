@@ -8,7 +8,7 @@ import Footer from "../../components/ui/Footer";
 import AddressBookList from "../../components/AddressBookList";
 
 
-export default function Records() {
+export default function Media() {
   const { t } = useTranslation();
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
