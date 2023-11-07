@@ -1,5 +1,7 @@
-import { useState, useEffect } from "react";
 import { useTranslation, Trans } from "react-i18next";
+import React, { useEffect, useState, useCallback, useContext } from "react";
+
+import { account, ID, databases, storage } from "../../components/lib/Appwrite";
 
 import Header from "../../components/ui/Header";
 import TopBar from "../../components/ui/TopBar";
@@ -15,11 +17,37 @@ export default function Yachts() {
   const [caseId, setCaseId] = useState(null);
   const [caseTab, setCaseTab] = useState("overview");
 
+  
+
   useEffect(() => {
     if (caseId !== null) {
       setCaseTab("overview");
     }
   }, [caseId]);
+
+  const fetchData = async () => {
+    try {
+      const response = await account.get();
+      if (response) {
+        const [
+          yachtResponse,
+          //settingsResponse
+        ] = await Promise.all([
+          databases.listDocuments(
+            import.meta.env.VITE_APPWRITE_DB,
+            import.meta.env.VITE_APPWRITE_COLL_YACHT
+          ),
+        ]);
+        console.log(yachtResponse)
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  useEffect(() => {
+    fetchData();
+  }, []);
 
   console.log(caseId);
 
